@@ -1,0 +1,50 @@
+﻿public void Reverse()
+{
+  string strexample="abcdef";
+  string strReverse=string.Empty();
+  for(var i=strexample.Length;i<=strexample.Length-1;i--)
+  {
+   try
+   {
+   strReverse=strReverse+strexample[i];
+   }
+   catch(Exception ex)
+   {}
+   }
+}
+
+
+public void FizzOrBuzz()
+{
+bool isFizz=false;
+bool isBuzz=false;
+  for(var i=0;i<=100;i++)
+  {
+   try
+   {
+     if(i%3==0)
+     {
+       isFizz=true;
+     }
+     if(i%5==0)
+     {
+       isBuzz=true;
+     }
+
+     if(isFizz&& isBuzz)
+     {
+     Console.Write("FizzBuzz");
+     }
+     else if(isFizz)
+     {
+     Console.Write("Fizz");
+     }
+    else if( isBuzz)
+     {
+     Console.Write("Buzz");
+     }
+   }
+   catch(Exception ex)
+   {}
+   }
+}

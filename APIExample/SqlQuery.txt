@@ -1,0 +1,27 @@
+﻿1.select * from Customer where Name like 'Joe'%
+
+2.select cm.customerid,cm.customername,count(cm.customerid),P.ProductId,P.ProductName customer cm
+inner join Order o on o.customerid=cm.orderid 
+left  join OrderProduct op on op.orderId=o.orderid
+left join Product P on P.Productid=op.Productid 
+Where  cm.CustomerName='Joe' And Convert(varcchar,O.CreatedAt,101)>convert(varchar,'11/01/2016',101)
+group by cm.customerid,P.ProductId,O.OrderId
+
+
+3.select Sum(P.Price) TotalAmount customer cm
+inner join Order o on o.customerid=cm.customerid 
+left  join OrderProduct op on op.orderId=o.orderid
+left join Product P on P.Productid=op.Productid 
+Where  cm.CustomerName='Joe'
+
+
+
+4.select cm.customerid,cm.customername,count(cm.customerid) customer cm
+inner join Order o on o.customerid=cm.customerid
+left  join OrderProduct op on op.orderId=o.orderid
+group by cm.customerid
+Having count(cm.cusomerid)>1
+
+
+
+
